@@ -1,21 +1,21 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.0'
+    }
+}
+
 allprojects {
-    group = project.property('group')
-    version = project.property('version')
-    ext.androidPluginVersion = project.property('androidPluginVersion')
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
 
-task test {
-    dependsOn gradle.includedBuild('gradle-retrolambda').task(':test')
-}
-
-task install {
-    dependsOn gradle.includedBuild('gradle-retrolambda').task(':install')
-}
-
-task publish {
-    dependsOn gradle.includedBuild('gradle-retrolambda').task(':publish')
-}
-
-task publishPlugins {
-    dependsOn gradle.includedBuild('gradle-retrolambda').task(':publishPlugins')
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
