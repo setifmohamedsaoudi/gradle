@@ -1,10 +1,17 @@
-rootProject.name = 'gradle-retrolambda-project'
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
 
-include ':sample-java',
-        ':sample-java-default-methods',
-        ':sample-android-app',
-        ':sample-android-lib',
-        ':sample-android-feature',
-        ':sample-android-test'
-
-includeBuild './gradle-retrolambda'
+rootProject.name = "MedExpert"
+include ':app'
